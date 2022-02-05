@@ -6,7 +6,7 @@ app = Flask(__name__)
 camera_backends = cv2.videoio_registry.getCameraBackends()
 print(camera_backends)
 print([
-    cv.videoio_registry.getBackendName(apipref)
+    cv2.videoio_registry.getBackendName(apipref)
     for apipref in camera_backends
 ])
 
