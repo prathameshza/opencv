@@ -3,6 +3,13 @@ import cv2
 
 app = Flask(__name__)
 
+camera_backends = cv2.videoio_registry.getCameraBackends()
+print(camera_backends)
+print([
+    cv.videoio_registry.getBackendName(apipref)
+    for apipref in camera_backends
+])
+
 camera = cv2.VideoCapture(0)  # use 0 for web camera
 #  for cctv camera use rtsp://username:password@ip_address:554/user=username_password='password'_channel=channel_number_stream=0.sdp' instead of camera
 # for local webcam use cv2.VideoCapture(0)
